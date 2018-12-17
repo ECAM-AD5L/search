@@ -47,7 +47,7 @@ const SearchService: ServiceSchema = {
 				search: "string",
 			},
 			async handler(ctx) {
-				this.createDB();
+				//this.createDB();
 				var res = await this.searchElastic(ctx.params.search)
 				return res;
 			},
