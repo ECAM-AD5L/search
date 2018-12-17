@@ -20,15 +20,6 @@ const ApiService: ServiceSchema = {
 					"**",
 				],
 				authorization: true,
-			},
-
-			{
-				path: "/",
-				whitelist: [
-					// Access to any actions in all services under "/api" URL
-					"login.*",
-				],
-				authorization: false,
 			}],
 
 		// Serve assets from "public" folder
