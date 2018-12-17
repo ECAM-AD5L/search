@@ -4,7 +4,7 @@ var elasticsearch = require('elasticsearch');
 import * as jwt from 'jsonwebtoken';
 
 var client = new elasticsearch.Client({
-	host: process.env.ELASTICSEARCH_URL
+	host: 'http://dokku-elasticsearch-elastic-search:9200'
 });
 
 const products = [
@@ -47,7 +47,7 @@ const SearchService: ServiceSchema = {
 				search: "string",
 			},
 			async handler(ctx) {
-				//this.createDB();
+				this.createDB();
 				var res = await this.searchElastic(ctx.params.search)
 				return res;
 			},
