@@ -1,0 +1,61 @@
+{
+  "name": "microservices",
+  "version": "1.0.0",
+  "description": "My Moleculer microservices project",
+  "scripts": {
+    "build": "tsc",
+    "dev": "ts-node ./node_modules/moleculer/bin/moleculer-runner.js --hot --repl --config moleculer.config.ts services/**/*.service.ts",
+    "start": "moleculer-runner services",
+    "ci": "jest --watch",
+    "test": "jest --coverage"
+  },
+  "keywords": [
+    "microservices",
+    "moleculer"
+  ],
+  "author": "",
+  "devDependencies": {
+    "@types/bluebird": "^3.5.23",
+    "@types/node": "^10.9.2",
+    "@types/jest": "^23.1.1",
+    "jest": "^23.3.0",
+    "jest-cli": "^23.3.0",
+    "ts-jest": "^23.1.4",
+    "moleculer-repl": "^0.5.0",
+    "ts-node": "^7.0.1",
+    "typescript": "^3.0.1"
+  },
+  "dependencies": {
+    "@types/jsonwebtoken": "^8.3.0",
+    "@types/node-fetch": "^2.1.4",
+    "elasticsearch": "^15.2.0",
+    "ioredis": "^3.2.2",
+    "jsonwebtoken": "^8.4.0",
+    "moleculer": "^0.13.0",
+    "moleculer-web": "^0.8.0",
+    "node-fetch": "^2.3.0"
+  },
+  "engines": {
+    "node": ">= 8.x.x"
+  },
+  "jest": {
+    "coverageDirectory": "<rootDir>/coverage",
+    "testEnvironment": "node",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js"
+    ],
+    "transform": {
+      "^.+\\.(ts|tsx)$": "ts-jest"
+    },
+    "testMatch": [
+      "**/*.spec.(ts|js)"
+    ],
+    "globals": {
+      "ts-jest": {
+        "tsConfigFile": "tsconfig.json"
+      }
+    }
+  }
+}
